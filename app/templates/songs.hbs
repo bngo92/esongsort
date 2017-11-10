@@ -1,0 +1,18 @@
+<h2>List of Songs</h2>
+
+<div style="float: left">
+<h3>Round {{count}}</h3>
+<button {{action "update" left right}}>{{left.title}}</button>
+<button {{action "update" right left}}>{{right.title}}</button>
+</div>
+<div style="float: right; width: 25%">
+<table style="border:1px solid">
+  {{#each sortedSongs as |song index|}}
+    <tr><td>{{add index 1}}</td><td>{{song.title}}</td><td>{{round song.elo}}</td></tr>
+  {{/each}}
+</table>
+</div>
+<style>
+td { border-left: 1px solid; padding-left: 5px; }
+td:first-child { border-left: none; text-align: center; }
+</style>
